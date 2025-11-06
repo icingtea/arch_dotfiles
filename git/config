@@ -1,0 +1,15 @@
+[user]
+	name = icingtea
+	email = jiakhot@outlook.com
+
+[init]
+	defaultBranch = master
+
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = all
+
+[core]
+	compression = 9
+	preloadindex = true
