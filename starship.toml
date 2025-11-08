@@ -1,0 +1,204 @@
+format = """
+[╭─🐰](bold purple)\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$git_metrics\
+$fill\
+$python\
+$nodejs\
+$rust\
+$golang\
+$php\
+$java\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$line_break\
+[╰─🐇](bold purple)$character"""
+
+
+[character]
+success_symbol = "[❯](bold teal) (๑•ᴗ•๑)♡"
+error_symbol = "[❯](bold yellow) (ó﹏ò｡)"
+vimcmd_symbol = "[❮](bold teal) ʕ•ᴥ•ʔ🐰"
+
+[username]
+style_user = "bold #ff69b4"
+style_root = "bold yellow"
+format = "[🐇 $user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[@$hostname](bold #ff69b4) "
+disabled = false
+
+[directory]
+style = "bold #ff1493"
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " 󰌾"
+read_only_style = "yellow"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Videos" = " "
+"Projects" = "󰲋 "
+"Desktop" = "󰚝 "
+
+[fill]
+symbol = " "
+
+[git_branch]
+symbol = "🐇 "
+style = "bold purple"
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+style = "bold pink"
+format = "([$all_status$ahead_behind]($style) )"
+conflicted = "⚔️ "
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+up_to_date = ""
+untracked = "?${count} "
+stashed = "📦${count} "
+modified = "!${count} "
+staged = "+${count} "
+renamed = "»${count} "
+deleted = "✘${count} "
+
+[git_state]
+style = "bold yellow"
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[git_metrics]
+disabled = false
+added_style = "bold teal"
+deleted_style = "bold pink"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[python]
+symbol = "🐍 "
+style = "bold yellow"
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+
+[nodejs]
+symbol = "⬢ "
+style = "bold teal"
+format = "[$symbol($version )]($style)"
+
+[rust]
+symbol = "🦀 "
+style = "bold #ff69b4"
+format = "[$symbol($version )]($style)"
+
+[golang]
+symbol = "🐹 "
+style = "bold teal"
+format = "[$symbol($version )]($style)"
+
+[php]
+symbol = " "
+style = "bold purple"
+format = "[$symbol($version )]($style)"
+
+[java]
+symbol = " "
+style = "bold pink"
+format = "[$symbol($version )]($style)"
+
+[docker_context]
+symbol = " "
+style = "bold teal"
+format = "[$symbol$context ]($style)"
+
+[kubernetes]
+symbol = "☸ "
+style = "bold purple"
+format = '[$symbol$context( \($namespace\))]($style) '
+disabled = false
+
+[aws]
+symbol = "  "
+style = "bold yellow"
+format = '[$symbol($profile )(\($region\) )]($style)'
+
+[cmd_duration]
+min_time = 500
+style = "bold yellow"
+format = "[⏱ $duration]($style) "
+
+[jobs]
+symbol = "✦🐇"
+style = "bold #ff69b4"
+number_threshold = 1
+format = "[$symbol$number]($style) "
+
+[time]
+disabled = false
+style = "bold purple"
+format = "[🕐 $time ₍ᐢ.ˬ.ᐢ₎♡]($style)"
+time_format = "%I:%M:%S %p"
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡"
+discharging_symbol = "🐰"
+format = "[$symbol$percentage]($style) "
+disabled = false
+
+[[battery.display]]
+threshold = 10
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 30
+style = "bold #ff69b4"
+
+[[battery.display]]
+threshold = 100
+style = "bold teal"
+
+[memory_usage]
+disabled = false
+threshold = 75
+symbol = "🧠 "
+style = "bold yellow"
+format = "$symbol[$ram( | $swap)]($style) "
+
+[package]
+symbol = "📦🐰 "
+style = "bold teal"
+format = "[$symbol$version]($style) "
+
+[status]
+style = "bold yellow"
+symbol = "✖"
+format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+map_symbol = true
+disabled = false
+
+[shell]
+fish_indicator = "🐠"
+powershell_indicator = "_"
+bash_indicator = "🐚"
+zsh_indicator = "⚡"
+disabled = false
+style = "bold pink"
+format = "[$indicator]($style) "
+
+[line_break]
+disabled = false

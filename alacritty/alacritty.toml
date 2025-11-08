@@ -1,0 +1,87 @@
+[window]
+opacity = 0.9                
+blur = true                  
+decorations = "full"         
+dynamic_padding = true       
+
+[window.padding]
+x = 12                       
+y = 12                       
+
+[window.dimensions]
+columns = 123
+lines = 27
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[colors.primary]
+background = "0x2A203B"       # Deep purple background
+foreground = "0x81EBEB"       # Soft lavender text
+
+[colors.normal]
+black   = "0x2B243B"
+red     = "0xFF6B9D"          # Soft pink
+green   = "0xFFD580"          # Warm yellow
+yellow  = "0xFFE59D"          # Pastel yellow
+blue    = "0xC6A0FF"          # Lavender
+magenta = "0xFF9CEE"          # Bright pink
+cyan    = "0xB5E8E0"          # Mint
+white   = "0xF8F8F2"          # Off-white
+
+[colors.bright]
+black   = "0x3C3450"
+red     = "0xFF92B5"          # Brighter pink
+green   = "0xFFE9A9"          # Brighter yellow
+yellow  = "0xFFF2B8"          # Cream
+blue    = "0xD6B6FF"          # Light purple
+magenta = "0xFFB7F5"          # Hot pink
+cyan    = "0xD0F4F0"          # Aqua
+white   = "0xFFFFFF"          # Pure white
+
+[cursor]
+blink_interval = 500
+
+[cursor.style]
+shape = "Beam"               
+blinking = "On"              
+
+[scrolling]
+history = 10000              
+multiplier = 3               
+
+[selection]
+save_to_clipboard = true     
+
+[terminal.shell]
+program = "/bin/bash"
+args = ["--login"]
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "SpawnNewInstance"
+
+[terminal]
