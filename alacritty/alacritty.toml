@@ -28,7 +28,7 @@ family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [colors.primary]
-background = "0x2A203B"       # Deep purple background
+background = "0x3A2A52"       # Deep purple background
 foreground = "0x81EBEB"       # Soft lavender text
 
 [colors.normal]
