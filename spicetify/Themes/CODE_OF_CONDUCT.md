@@ -1,1 +1,0 @@
-../../../Desktop/arch_dotfiles/spicetify/Themes/CODE_OF_CONDUCT.md

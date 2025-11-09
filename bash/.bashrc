@@ -21,3 +21,5 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias aur='sudo paru -S'
+alias files="zellij -l strider"
+alias code="zellij"
