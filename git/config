@@ -13,3 +13,5 @@
 [core]
 	compression = 9
 	preloadindex = true
+[credential]
+	helper = store

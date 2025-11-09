@@ -1,0 +1,57 @@
+
+"ui.background" = { bg = "dark-bg" }
+"ui.text" = { fg = "cream" }
+"ui.text.focus" = { fg = "cream", modifiers = ["bold"] }
+"ui.selection" = { bg = "selection" }
+"ui.cursor" = { fg = "dark-bg", bg = "cream" }
+"ui.cursor.match" = { bg = "yellow", fg = "dark-bg" }
+"ui.linenr" = { fg = "pink" }
+"ui.linenr.selected" = { fg = "cream", modifiers = ["bold"] }
+"ui.statusline" = { fg = "cream", bg = "darker-bg" }
+"ui.statusline.inactive" = { fg = "gray", bg = "darker-bg" }
+"ui.popup" = { bg = "darker-bg", fg = "cream" }
+"ui.window" = { fg = "gray" }
+"ui.menu" = { bg = "darker-bg", fg = "cream" }
+"ui.menu.selected" = { bg = "purple", fg = "cream" }
+
+"comment" = { fg = "teal", modifiers = ["italic"] }
+"keyword" = { fg = "magenta" }
+"keyword.control" = { fg = "magenta", modifiers = ["bold"] }
+"function" = { fg = "blue" }
+"string" = { fg = "lime" }
+"number" = { fg = "coral" }
+"constant" = { fg = "yellow" }
+"variable" = { fg = "cream" }
+"type" = { fg = "cyan" }
+"operator" = { fg = "magenta" }
+"punctuation" = { fg = "cream" }
+
+"markup.heading" = { fg = "magenta", modifiers = ["bold"] }
+"markup.list" = { fg = "coral" }
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "blue" }
+"markup.link.text" = { fg = "cyan" }
+"markup.quote" = { fg = "lime" }
+"markup.raw" = { fg = "teal" }
+
+"diagnostic.error" = { underline = { style = "curl", color = "coral" } }
+"diagnostic.warning" = { underline = { style = "curl", color = "yellow" } }
+"diagnostic.info" = { underline = { style = "curl", color = "cyan" } }
+"diagnostic.hint" = { underline = { style = "curl", color = "teal" } }
+
+[palette]
+dark-bg = "#1a1a2e"
+darker-bg = "#16213e"
+cream = "#fffaeb"
+purple = "#9d6cb4"
+gray = "#888888"
+selection = "#3d3d5c"
+pink = "#ff6496"
+coral = "#ff4b64"
+lime = "#f0dc50"
+yellow = "#ffe63c"
+blue = "#50b4ff"
+magenta = "#ff78c8"
+cyan = "#32c8c8"
+teal = "#3cd2be"

@@ -6,3 +6,17 @@ fastfetch
 
 eval "$(starship init bash)"
 
+alias ls='eza -a -1 --icons --group-directories-first'
+alias cdot='cd ~/Desktop/arch_dotfiles'
+alias update='sudo pacman -Syu'
+alias install='sudo pacman -S'
+alias remove='sudo pacman -Rns'
+alias cleanup='sudo pacman -Rns $(pacman -Qdtq)'
+alias c='clear'
+alias h='history'
+alias grep='grep --color=auto'
+alias please='sudo $(history -p !!)'
+alias mkdir='mkdir -pv'
+alias cp='cp -i'  
+alias mv='mv -i'
+alias rm='rm -i'

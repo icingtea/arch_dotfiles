@@ -282,20 +282,36 @@ ui {
     }
 }
 
-theme "tokyo-night"
-
 // Use a simplified UI without special fonts (arrow glyphs)
 // Options:
 //   - true
 //   - false (Default)
 // 
-// simplified_ui true
+//  simplified_ui true
  
 // Choose the theme that is specified in the themes section.
 // Default: default
-// 
-// theme "dracula"
- 
+//
+
+themes {
+    my-theme {
+        fg       100 60  120
+        bg       255 250 235
+        black    255 100 150
+        red      255 75  100
+        green    240 220 80
+        yellow   255 230 60
+        blue     80  180 255
+        magenta  255 120 200
+        cyan     50  200 200
+        white    255 255 255
+        orange   60  210 190
+    }
+}
+
+theme "my-theme"
+
+
 // Choose the base input mode of zellij.
 // Default: normal
 // 
