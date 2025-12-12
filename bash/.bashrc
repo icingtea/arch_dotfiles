@@ -38,4 +38,9 @@ function _bnui_hook() {
     eval "$env_cmds"
 }
 
-PROMPT_COMMAND='_bnui_hook "$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//")"'
+# Append to existing PROMPT_COMMAND
+if [[ -n "$PROMPT_COMMAND" ]]; then
+    PROMPT_COMMAND="${PROMPT_COMMAND}; _bnui_hook \"\$(history 1 | sed 's/^[ ]*[0-9]*[ ]*//')\""
+else
+    PROMPT_COMMAND='_bnui_hook "$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//")"'
+fi
