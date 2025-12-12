@@ -30,3 +30,12 @@ alias gpl="git pull"
 alias ga="git add *"
 alias gi="git init"
 alias dev="cd ~/Desktop/progaming"
+
+function _bnui_hook() {
+    local command="$1"
+    local env_cmds
+    env_cmds="$(bnui tick --command "$command" 2>&1 >/dev/tty)"
+    eval "$env_cmds"
+}
+
+PROMPT_COMMAND='_bnui_hook "$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//")"'
