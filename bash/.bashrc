@@ -2,7 +2,10 @@ export BASH_ENV="$HOME/.config/bash/.bashrc"
 
 export PATH="$PATH:$HOME/.cargo/bin:"
 
-fastfetch
+# Only run Fastfetch for interactive login shells, not scripts
+if [[ $- == *i* && -z "$AUR_BUILD" ]]; then
+    fastfetch
+fi
 
 eval "$(starship init bash)"
 
@@ -31,16 +34,17 @@ alias ga="git add *"
 alias gi="git init"
 alias dev="cd ~/Desktop/progaming"
 
+
+# bnui
 function _bnui_hook() {
-    local command="$1"
-    local env_cmds
-    env_cmds="$(bnui tick --command "$command" 2>&1 >/dev/tty)"
-    eval "$env_cmds"
+  bnui tick
 }
 
-# Append to existing PROMPT_COMMAND
 if [[ -n "$PROMPT_COMMAND" ]]; then
-    PROMPT_COMMAND="${PROMPT_COMMAND}; _bnui_hook \"\$(history 1 | sed 's/^[ ]*[0-9]*[ ]*//')\""
+  PROMPT_COMMAND="${PROMPT_COMMAND}; _bnui_hook"
 else
-    PROMPT_COMMAND='_bnui_hook "$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//")"'
+  PROMPT_COMMAND="_bnui_hook"
 fi
+
+export EDITOR=hx
+export VISUAL=hx
