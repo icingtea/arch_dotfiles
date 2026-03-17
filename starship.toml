@@ -16,11 +16,11 @@ $php\
 $java\
 $cmd_duration\
 $jobs\
+$custom\
 $battery\
 $time\
 $line_break\
 [╰─🐇](bold purple)$character"""
-
 
 [character]
 success_symbol = "[❯](bold teal) (๑•ᴗ•๑)♡"
@@ -202,3 +202,45 @@ format = "[$indicator]($style) "
 
 [line_break]
 disabled = false
+
+# BNUI
+
+[custom.bnui]
+description = "BNUI status"
+command = """
+# Exit early if none of the variables exist
+if [ -z "$BNUI_HUNGER" ] && [ -z "$BNUI_HAPPINESS" ] && [ -z "$BNUI_HIDING" ]; then
+  exit 0
+fi
+
+# Build pieces only if present
+hunger=""
+happiness=""
+hiding=""
+
+if [ -n "$BNUI_HUNGER" ]; then
+  hunger=$(printf "🍽 %.2f" "$BNUI_HUNGER")
+fi
+
+if [ -n "$BNUI_HAPPINESS" ]; then
+  happiness=$(printf "♥ %.2f" "$BNUI_HAPPINESS")
+fi
+
+if [ "$BNUI_HIDING" = "true" ]; then
+  hiding="Hiding!"
+fi
+
+# Join with separators only when needed
+output=""
+
+[ -n "$hunger" ] && output="$hunger"
+[ -n "$happiness" ] && output="${output:+$output | }$happiness"
+[ -n "$hiding" ] && output="${output:+$output | }$hiding"
+
+# Final render
+printf " [  egg ❯ %s ]" "$output"
+"""
+# Show module only if at least one variable exists
+when = "test -n \"$BNUI_HUNGER\" || test -n \"$BNUI_HAPPINESS\" || test -n \"$BNUI_HIDING\""
+shell = ["bash", "--noprofile", "--norc"]
+format = "[$output](bold #ff69b4) "
