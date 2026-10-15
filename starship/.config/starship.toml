@@ -23,9 +23,9 @@ $line_break\
 [╰─🐇](bold purple)$character"""
 
 [character]
-success_symbol = "[❯](bold teal) (๑•ᴗ•๑)♡"
+success_symbol = "[❯](bold cyan) (๑•ᴗ•๑)♡"
 error_symbol = "[❯](bold yellow) (ó﹏ò｡)"
-vimcmd_symbol = "[❮](bold teal) ʕ•ᴥ•ʔ🐰"
+vimcmd_symbol = "[❮](bold cyan) ʕ•ᴥ•ʔ🐰"
 
 [username]
 style_user = "bold #ff69b4"
@@ -65,7 +65,7 @@ style = "bold purple"
 format = "[$symbol$branch(:$remote_branch)]($style) "
 
 [git_status]
-style = "bold pink"
+style = "bold #ff69b4"
 format = "([$all_status$ahead_behind]($style) )"
 conflicted = "⚔️ "
 ahead = "⇡${count} "
@@ -85,8 +85,8 @@ format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [git_metrics]
 disabled = false
-added_style = "bold teal"
-deleted_style = "bold pink"
+added_style = "bold cyan"
+deleted_style = "bold #ff69b4"
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [python]
@@ -97,7 +97,7 @@ pyenv_version_name = true
 
 [nodejs]
 symbol = "⬢ "
-style = "bold teal"
+style = "bold cyan"
 format = "[$symbol($version )]($style)"
 
 [rust]
@@ -107,7 +107,7 @@ format = "[$symbol($version )]($style)"
 
 [golang]
 symbol = "🐹 "
-style = "bold teal"
+style = "bold cyan"
 format = "[$symbol($version )]($style)"
 
 [php]
@@ -117,12 +117,12 @@ format = "[$symbol($version )]($style)"
 
 [java]
 symbol = " "
-style = "bold pink"
+style = "bold #ff69b4"
 format = "[$symbol($version )]($style)"
 
 [docker_context]
 symbol = " "
-style = "bold teal"
+style = "bold cyan"
 format = "[$symbol$context ]($style)"
 
 [kubernetes]
@@ -170,7 +170,7 @@ style = "bold #ff69b4"
 
 [[battery.display]]
 threshold = 100
-style = "bold teal"
+style = "bold cyan"
 
 [memory_usage]
 disabled = false
@@ -181,7 +181,7 @@ format = "$symbol[$ram( | $swap)]($style) "
 
 [package]
 symbol = "📦🐰 "
-style = "bold teal"
+style = "bold cyan"
 format = "[$symbol$version]($style) "
 
 [status]
@@ -197,7 +197,7 @@ powershell_indicator = "_"
 bash_indicator = "🐚"
 zsh_indicator = "⚡"
 disabled = false
-style = "bold pink"
+style = "bold #ff69b4"
 format = "[$indicator]($style) "
 
 [line_break]

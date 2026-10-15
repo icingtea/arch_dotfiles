@@ -1,0 +1,4 @@
+--target=~
+--ignore=\.bak$
+--ignore=\.bak\..*
+--ignore=\.pre-bisect.*

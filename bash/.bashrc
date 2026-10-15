@@ -1,50 +1,74 @@
-export BASH_ENV="$HOME/.config/bash/.bashrc"
+# ~/.bashrc — stowed from ~/Desktop/arch_dotfiles/bash
 
-export PATH="$PATH:$HOME/.cargo/bin:"
+path_prepend() {
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH="$1:$PATH" ;;
+    esac
+}
 
-# Only run Fastfetch for interactive login shells, not scripts
-if [[ $- == *i* && -z "$AUR_BUILD" ]]; then
-    fastfetch
-fi
+path_append() {
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH="$PATH:$1" ;;
+    esac
+}
 
+# The whole desktop session gets PATH from ~/.config/environment.d/10-path.conf.
+# Repeated here for TTY logins and ssh, where environment.d doesn't apply.
+path_prepend "$HOME/.local/bin"
+path_prepend "$HOME/scripts"
+path_append "$HOME/.cargo/bin"
+path_append "$HOME/go/bin"
+export PATH
+
+export EDITOR=hx
+export VISUAL=hx
+
+# Everything below is for interactive shells only; scripts stop here.
+[[ $- != *i* ]] && return
+
+fastfetch
 eval "$(starship init bash)"
 
 alias ls='eza -a -1 --icons --group-directories-first'
 alias cdot='cd ~/Desktop/arch_dotfiles'
-alias update='sudo pacman -Syu'
+alias dev='cd ~/Desktop/progaming'
+
+# packages (paru calls sudo itself and also updates AUR packages)
+alias update='paru -Syu'
 alias install='sudo pacman -S'
 alias remove='sudo pacman -Rns'
-alias cleanup='sudo pacman -Rns $(pacman -Qdtq)'
+alias aur='paru -S'
+alias cleanup='pkg-clean'
+
 alias c='clear'
 alias h='history'
 alias grep='grep --color=auto'
 alias please='sudo $(history -p !!)'
 alias mkdir='mkdir -pv'
-alias cp='cp -i'  
+alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-alias aur='sudo paru -S'
-alias files="zellij -l strider"
-alias code="zellij"
-alias hx="helix"
-alias gc="git commit -m"
-alias gps="git push"
-alias gpl="git pull"
-alias ga="git add *"
-alias gi="git init"
-alias dev="cd ~/Desktop/progaming"
 
+alias hx='helix'
+alias zj='zellij'
+alias files='zellij -l strider'
+
+alias gc='git commit -m'
+alias gps='git push'
+alias gpl='git pull'
+alias ga='git add -A'
+alias gi='git init'
 
 # bnui
-function _bnui_hook() {
-  bnui tick
-}
-
-if [[ -n "$PROMPT_COMMAND" ]]; then
-  PROMPT_COMMAND="${PROMPT_COMMAND}; _bnui_hook"
-else
-  PROMPT_COMMAND="_bnui_hook"
-fi
-
-export EDITOR=hx
-export VISUAL=hx
+# function _bnui_hook() {
+#   bnui tick
+#   source /tmp/bnui_env.sh
+# }
+#
+# if [[ -n "$PROMPT_COMMAND" ]]; then
+#   PROMPT_COMMAND="${PROMPT_COMMAND}; _bnui_hook"
+# else
+#   PROMPT_COMMAND="_bnui_hook"
+# fi

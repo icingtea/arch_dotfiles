@@ -1,5 +1,5 @@
 [window]
-opacity = 0.9                
+opacity = 0.8                
 blur = true               
 decorations = "full"         
 dynamic_padding = true       
@@ -84,4 +84,12 @@ key = "N"
 mods = "Control|Shift"
 action = "SpawnNewInstance"
 
-[terminal]
+[[keyboard.bindings]]
+key = "V"
+mods = "Control"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"

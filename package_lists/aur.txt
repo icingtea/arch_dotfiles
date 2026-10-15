@@ -1,0 +1,3 @@
+claude-desktop-extra
+jdtls
+rstudio-desktop-bin
